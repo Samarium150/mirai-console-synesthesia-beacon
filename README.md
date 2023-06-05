@@ -1,0 +1,1 @@
+# mirai-console-synesthesia-beacon

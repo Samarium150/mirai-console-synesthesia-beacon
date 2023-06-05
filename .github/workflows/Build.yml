@@ -1,0 +1,30 @@
+name: Build
+on:
+  push:
+    paths-ignore:
+      - '**/README.md'
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+permissions: read-all
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup JDK
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'microsoft'
+          java-version: 11
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Gradle Wrapper Validation
+        uses: gradle/wrapper-validation-action@v1
+      - name: Build with Gradle
+        run: |
+          chmod +x ./gradlew
+          ./gradlew build --dry-run
