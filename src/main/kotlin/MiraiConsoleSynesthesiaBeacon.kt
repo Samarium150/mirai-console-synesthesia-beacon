@@ -16,9 +16,11 @@
  */
 package io.github.samarium150.mirai.plugin.synesthesia_beacon
 
+import io.github.samarium150.mirai.plugin.synesthesia_beacon.command.SynesthesiaBeacon
+import net.mamoe.mirai.console.command.CommandManager.INSTANCE.register
+import net.mamoe.mirai.console.command.CommandManager.INSTANCE.unregister
 import net.mamoe.mirai.console.plugin.jvm.JvmPluginDescription
 import net.mamoe.mirai.console.plugin.jvm.KotlinPlugin
-import net.mamoe.mirai.utils.info
 
 object MiraiConsoleSynesthesiaBeacon : KotlinPlugin(
     JvmPluginDescription(
@@ -30,6 +32,11 @@ object MiraiConsoleSynesthesiaBeacon : KotlinPlugin(
     }
 ) {
     override fun onEnable() {
-        logger.info { "Plugin loaded" }
+        SynesthesiaBeacon.register()
+    }
+
+
+    override fun onDisable() {
+        SynesthesiaBeacon.unregister()
     }
 }
