@@ -11,8 +11,8 @@
 具体使用文档放在了 [wiki](https://github.com/Samarium150/mirai-console-synesthesia-beacon/wiki) 页面
 
 下图是功能演示
-<!--suppress CheckImageSize -->
-<img src="docs/example.png" alt="example" width="400" />
+
+![example](docs/example.png)
 
 ## Miscellaneous
 
