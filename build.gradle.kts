@@ -5,15 +5,19 @@ plugins {
     kotlin("jvm") version kotlinVersion
     kotlin("plugin.serialization") version kotlinVersion
 
-    id("net.mamoe.mirai-console") version "2.14.0"
+    id("net.mamoe.mirai-console") version "2.15.0-RC"
     id("com.geoffgranum.gradle-conventional-changelog") version "+"
 }
 
 group = "io.github.samarium150"
-version = "0.1.0"
+version = "1.0.0"
 
 repositories {
     mavenCentral()
+}
+
+dependencies {
+    implementation("io.github.ranlee1:jpinyin:1.0.1")
 }
 
 tasks {

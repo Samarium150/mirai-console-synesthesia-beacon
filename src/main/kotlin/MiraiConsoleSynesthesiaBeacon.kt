@@ -17,6 +17,8 @@
 package io.github.samarium150.mirai.plugin.synesthesia_beacon
 
 import io.github.samarium150.mirai.plugin.synesthesia_beacon.command.SynesthesiaBeacon
+import io.github.samarium150.mirai.plugin.synesthesia_beacon.config.CommandConfig
+import io.github.samarium150.mirai.plugin.synesthesia_beacon.config.RenderConfig
 import net.mamoe.mirai.console.command.CommandManager.INSTANCE.register
 import net.mamoe.mirai.console.command.CommandManager.INSTANCE.unregister
 import net.mamoe.mirai.console.plugin.jvm.JvmPluginDescription
@@ -26,15 +28,16 @@ object MiraiConsoleSynesthesiaBeacon : KotlinPlugin(
     JvmPluginDescription(
         id = "io.github.samarium150.mirai.plugin.synesthesia-beacon",
         name = "Synesthesia Beacon",
-        version = "0.1.0",
+        version = "1.0.0",
     ) {
         author("Samarium")
     }
 ) {
     override fun onEnable() {
+        CommandConfig.reload()
+        RenderConfig.reload()
         SynesthesiaBeacon.register()
     }
-
 
     override fun onDisable() {
         SynesthesiaBeacon.unregister()
