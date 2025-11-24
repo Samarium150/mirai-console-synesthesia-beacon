@@ -16,7 +16,7 @@ jobs:
           distribution: 'microsoft'
           java-version: 11
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
       - name: Gradle Wrapper Validation
         uses: gradle/wrapper-validation-action@v3
       - name: Build with Gradle
